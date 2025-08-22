@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  neohoods-space-chart:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-08-22T14:06:19.396379517Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.x.x
+    description: A Helm chart for deploying NeoHoods space application
+    digest: 066c42cbd85840cecb243d29ff27c6ac1480bfd42ca450a9900aaae130096b61
+    name: neohoods-space-chart
+    type: application
+    urls:
+    - https://github.com/neohoods/neospace-helm/releases/download/neohoods-space-chart-0.1.59/neohoods-space-chart-0.1.59.tgz
+    version: 0.1.59
+generated: "2025-08-22T14:06:19.396389817Z"
