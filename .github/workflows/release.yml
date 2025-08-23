@@ -59,15 +59,7 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Strip prefix from chart version
-        id: clean_version
-        run: |
-          RAW="${{ steps.chart-releaser.outputs.chart_version }}"
-          CLEAN="${RAW#neohoods-space-chart-}"
-          echo "clean_version=$CLEAN" >> $GITHUB_OUTPUT
-          echo "Using chart version: $CLEAN"
-
-      - name: Deploy
+      - name: Deploy updated dependency
         uses: qcastel/github-actions-update-helm@master
         with:
           branch-name: main
@@ -82,8 +74,8 @@ jobs:
 
           yaml-paths: "dependencies[0].version"
 
-          # Use cleaned version without prefix
-          tag: ${{ steps.clean_version.outputs.clean_version }}
+          # Use bumped version directly
+          tag: ${{ steps.bump_version.outputs.bumped_version }}
           
           gpg-enabled: true
           gpg-key-id: ${{ secrets.GPG_KEY_ID }}
