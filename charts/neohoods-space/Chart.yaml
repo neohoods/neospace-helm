@@ -1,6 +1,6 @@
 apiVersion: v2
 name: neohoods-space-chart
-description: A Helm chart for deploying NeoHoods space application
+description: A Helm chart for deploying NeoHoods space app
 type: application
 version: 0.1.61
 appVersion: "1.0.1"
