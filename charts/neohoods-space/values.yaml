@@ -37,7 +37,7 @@ backend:
     SERVER_PORT: 8486
     SPRING_PROFILES_ACTIVE: dev
     SPRING_DATASOURCE_USERNAME: neohoods_space_user
-    SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql.platform.svc.cluster.local:5432/neohoods-space
+    SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql.platform.svc.cluster.local:5432/neohoods_space
 
 ingress:
   host: space.neohoods.com
