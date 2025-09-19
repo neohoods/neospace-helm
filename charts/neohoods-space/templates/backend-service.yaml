@@ -3,11 +3,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: space.{{ .Release.Name }}-backend
+  name: space-{{ .Release.Name }}-backend
 spec:
   type: {{ .Values.backend.service.type }}
   selector:
-    app: space.{{ .Release.Name }}-backend
+    app: space-{{ .Release.Name }}-backend
   ports:
     - name: http
       protocol: TCP
