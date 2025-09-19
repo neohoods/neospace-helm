@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ .Release.Name }}-flyway
+  name: space.{{ .Release.Name }}-flyway
   annotations:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-weight": "1"
@@ -34,11 +34,9 @@ spec:
             {{- if .Values.flyway.fakeData }}
             - name: sql-part2
               mountPath: /flyway/sql-part2
-            - name: sql-part3
-              mountPath: /flyway/sql-part3
             {{- end }}
       volumes:
         - name: sql
           configMap:
-            name: {{ .Release.Name }}-flyway-sql-part1
+            name: space.{{ .Release.Name }}-flyway-sql-part1
       restartPolicy: Never
